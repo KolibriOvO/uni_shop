@@ -21,7 +21,10 @@
 					total: 0,
 					defaultPic: 'https://img3.doubanio.com/f/movie/8dd0c794499fe925ae2ae89ee30cd225750457b4/pics/movie/celebrity-default-medium.png',
 					isloading: false
-				};
+				},
+				goodsList: [],
+				total: 0,
+				isloading: false
 			}
 		},
 		methods: {
@@ -38,9 +41,9 @@
 				this.total = res.message.total
 			},
 			gotoDetail(item) {
-			  uni.navigateTo({
-			    url: '/subpkg/goods_detail/goods_detail?goods_id=' + item.goods_id
-			  })
+				uni.navigateTo({
+					url: '/subpkg/goods_detail/goods_detail?goods_id=' + item.goods_id
+				})
 			}
 		},
 		onLoad(options) {
@@ -63,6 +66,7 @@
 
 			this.getGoodsList(() => uni.stopPullDownRefresh())
 		}
+	}
 </script>
 
 <style lang="scss">
